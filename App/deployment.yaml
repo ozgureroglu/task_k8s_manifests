@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jodel-post-app
+  namespace: jodel
+  labels:
+    app: jodel-post-app
+spec:
+  selector:
+    matchLabels:
+      app: jodel-post-app
+  template:
+    metadata:
+      labels:
+        app: jodel-post-app
+    spec:
+      containers:
+      - name: jodel-post-app
+        image: ozgureroglu/jodel-post-app
+        ports:
+        - containerPort: 80
+        # livenessProbe:
+        #   httpGet:
+        #     path: /
+        #     port: 80
+        # readinessProbe:
+        #   httpGet:
+        #     path: /
+        #     port: 80
+        resources:
+          limits:
+            cpu: 100m
+            memory: 256Mi
+          requests:
+            cpu: 80m
+            memory: 128Mi
+
