@@ -1,8 +1,3 @@
-### Test your kubernetes installation
-K8S kurulumunu yaptiktan sonra, kumeyi test etmek amacli olarak bir nginx sunucu
-kurulumu yapilir. Ayrica debug etmek gereken bir durum olmasi durumunda kullanilabilecek 
-bir shell kurulumu yapilir.
+## Post service
 
-- nginx web server (Ingress)
-- shell installation
-- 
+- This includes the yamls to deploy and serve the applocation on to a K8S cluster

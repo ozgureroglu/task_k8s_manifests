@@ -1,0 +1,1 @@
+Here are the K8S plain yaml manifests to install app, mongdb(cluster) and redis(cluster) on the K8S.

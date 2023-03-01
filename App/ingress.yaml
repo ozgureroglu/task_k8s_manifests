@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: test-ingress
+  name: post-service
   namespace: jodel
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
@@ -12,13 +12,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /something(/|$)(.*)
+      - path: /postsvc(/|$)(.*)
         pathType: ImplementationSpecific
         backend:
           service:
            name: jodel-post-app
            port:
              number: 80
-    # host: dev.vuejs-test-app.192.168.64.199.xip.io
-
-# create lines to make this ingress nginx controlled

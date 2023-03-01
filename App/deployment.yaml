@@ -16,17 +16,17 @@ spec:
     spec:
       containers:
       - name: jodel-post-app
-        image: ozgureroglu/jodel-post-app
+        image: ozgureroglu/jodel_post_service
         ports:
-        - containerPort: 80
-        # livenessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 80
-        # readinessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 80
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /api/healthChecker
+            port: 8000
+        readinessProbe:
+          httpGet:
+            path: /api/healthChecker
+            port: 80000
         resources:
           limits:
             cpu: 100m
